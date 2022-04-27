@@ -44,6 +44,10 @@ const loveArmySchema = new Schema({
   reminders: [{
     reminderSchema
   }],
+  plans: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Plan"
+  }],
   status: {
     type: Boolean,
     default: true,
