@@ -11,6 +11,19 @@ const giftSchema = new Schema ({
   note: String
 })
 
+const reminderSchema = new Schema ({
+  name: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  link: {
+    type: String
+  }
+})
 
 const loveArmySchema = new Schema({
   name: {
@@ -27,6 +40,9 @@ const loveArmySchema = new Schema({
   },
   gifts: [{
     giftSchema
+  }],
+  reminders: [{
+    reminderSchema
   }],
   status: {
     type: Boolean,
