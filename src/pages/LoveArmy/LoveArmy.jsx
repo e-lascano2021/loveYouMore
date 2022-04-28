@@ -1,7 +1,10 @@
+import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader"
+
 const LoveArmy = (props) => {
   return (
     <main>
-      <h1>loveArmy page</h1>
+      <LoveArmyHeader/>
+
     </main>
   )
 }
