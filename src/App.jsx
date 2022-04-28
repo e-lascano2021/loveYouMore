@@ -5,6 +5,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import LoveArmy from './pages/LoveArmy/LoveArmy'
+import LoveArmyForm from './pages/LoveArmy/LoveArmyForm.jsx'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 
@@ -38,6 +39,10 @@ const App = () => {
         <Route
           path="/loveArmy"
           element={user ? <LoveArmy/>: <Navigate to="/login" />}
+        />
+        <Route
+          path="/loveArmy/new"
+          element={user ? <LoveArmyForm/>: <Navigate to="/login" />}
         />
         <Route
           path="/changePassword"

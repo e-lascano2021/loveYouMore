@@ -1,7 +1,7 @@
 const LoveArmyCard = (props) => {
   return (
     <>
-    <p>props.soldier.name</p>
+    <h1>{props.cardInfo.name}</h1>
     </>
   )
 }
