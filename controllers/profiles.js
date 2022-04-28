@@ -9,4 +9,8 @@ function index(req, res) {
   })
 }
 
+function create(req, res){
+  
+}
+
 export { index }
