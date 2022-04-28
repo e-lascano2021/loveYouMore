@@ -25,6 +25,29 @@ const reminderSchema = new Schema ({
   }
 })
 
+const planSchema = new Schema ({
+  who:{
+    type: String,
+    required: true
+  },
+  where: {
+    type: String,
+    required: true
+  },
+  what: {
+    type: String,
+    required: true
+  },
+  when : {
+    type: String,
+    required: true
+  },
+  note: {
+    type: String,
+  }
+
+})
+
 const loveArmySchema = new Schema({
   name: {
     type: String,
@@ -45,8 +68,7 @@ const loveArmySchema = new Schema({
     reminderSchema
   }],
   plans: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Plan"
+    planSchema
   }],
   status: {
     type: Boolean,
@@ -61,8 +83,7 @@ const profileSchema = new Schema({
     loveArmySchema
   }],
   plans: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Plan"
+    planSchema
   }],
 },{
     timestamps: true,
