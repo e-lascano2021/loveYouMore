@@ -36,7 +36,7 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles/loveArmy"
+          path="/loveArmy"
           element={user ? <LoveArmy/>: <Navigate to="/login" />}
         />
         <Route
