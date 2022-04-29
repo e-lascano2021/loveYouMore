@@ -5,6 +5,7 @@ import { getLoveArmy } from "../../services/profileService.js"
 
 const LoveArmy = (props) => {
   const [army, setArmy] = useState([])
+
   useEffect(() => {
     const getArmyList = async () => {
       try {
@@ -14,14 +15,19 @@ const LoveArmy = (props) => {
         throw error
       }
     }
-
     getArmyList()
   }, [])
 
   return (
     <main>
       <LoveArmyHeader/>
-      <LoveArmyCard/>
+      {army.map((soldier) => {
+        return( 
+          <>
+            <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
+          </>
+        )
+      })}
     </main>
   )
 }

@@ -1,6 +1,8 @@
-const LoveArmyCard = () => {
+const LoveArmyCard = (props) => {
   return (
-    <p>cardddd</p>
+    <>
+      <h1>{props.cardInfo.name}</h1>
+    </>
   )
 }
 export default LoveArmyCard
