@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 const LoveArmyHeader = () => {
   const navigate = useNavigate()
+  
   const handleAddSoldier = () => {
     navigate("/loveArmy/new")
   }
