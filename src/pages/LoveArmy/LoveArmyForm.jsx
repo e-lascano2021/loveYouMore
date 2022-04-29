@@ -1,7 +1,7 @@
 const LoveArmyForm = () => {
   return (
     <main>
-    <>hi</>
+      <>hi</>
     </main>
   )
 }
