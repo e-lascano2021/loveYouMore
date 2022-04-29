@@ -22,12 +22,12 @@ const LoveArmy = (props) => {
     <main>
       <LoveArmyHeader/>
       {army.map((soldier) => {
-      return( 
-        <>
-          <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
-        </>
-      )
-    })}
+        return( 
+          <>
+            <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
+          </>
+        )
+      })}
     </main>
   )
 }
