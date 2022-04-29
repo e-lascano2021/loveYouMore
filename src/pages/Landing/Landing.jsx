@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import LoginForm from '../../components/LoginForm/LoginForm'
+import Login from '../../components/Login/Login.jsx'
 import Signup from '../../components/Signup/Signup.jsx'
 // import styles from './Landing.module.css'
 
@@ -20,7 +20,7 @@ const Landing = (props) => {
       </div>
 
       { form === "LogIn" ?
-        <LoginForm/>
+        <Login {...props}/>
       : form === "SignUp" ?
         <Signup {...props}/> 
       :
