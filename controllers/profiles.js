@@ -1,5 +1,15 @@
 import { Profile } from '../models/profile.js'
 
+
+const show = async (req, res) => {
+  try {
+    const profile = await Profile.findById(req.params.id);
+    return res.status(201).json(profile);
+  } catch (error) {
+    throw error
+  }
+}
+
 const index = async(req, res) => {
   try {
     const profile = await Profile.findById(req.user.profile);
@@ -22,6 +32,7 @@ const create = async(req, res) => {
 }
 
 export {
+  show,
   index,
   create
-  }
+}
