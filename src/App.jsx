@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
-import Signup from './components/Signup/Signup'
-import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import LoveArmy from './pages/LoveArmy/LoveArmy'
 import LoveArmyForm from './pages/LoveArmy/LoveArmyForm'
@@ -34,15 +32,15 @@ const App = () => {
         <Route path="/" element={<Landing handleSignupOrLogin={handleSignupOrLogin}/>} />
         <Route
           path="/loveArmy"
-          element={user ? <LoveArmy/>: <Navigate to="/login" />}
+          element={user ? <LoveArmy/>: <Navigate to="/" />}
         />
         <Route
           path="/loveArmy/new"
-          element={user ? <LoveArmyForm/>: <Navigate to="/login" />}
+          element={user ? <LoveArmyForm/>: <Navigate to="/" />}
         />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/" />}
         />
       </Routes>
     </>
