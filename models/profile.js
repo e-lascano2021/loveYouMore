@@ -53,6 +53,10 @@ const loveArmySchema = new Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    required: false,
+  },
   totalPoints: {
     type: Number,
     default: 250,

@@ -10,7 +10,7 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get("/loveArmy", checkAuth, profilesCtrl.index)
-router.get("/loveArmy/new", checkAuth, profilesCtrl.create)
+router.post("/loveArmy/new", checkAuth, profilesCtrl.create)
 router.get("/loveArmy/:id", checkAuth, profilesCtrl.showSoldier)
 router.get("/:id", checkAuth, profilesCtrl.show)
 export { router }

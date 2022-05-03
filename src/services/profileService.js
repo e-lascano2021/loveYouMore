@@ -15,6 +15,23 @@ const getLoveArmy = async () => {
   }
 }
 
+const createLoveArmy = async (post) => {
+  try {
+    const res = await fetch(`${BASE_URL}/loveArmy/new`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(post)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 const getProfileInfo = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
@@ -43,6 +60,7 @@ const getSoldierInfo = async (id) => {
 
 export { 
   getLoveArmy,
+  createLoveArmy,
   getProfileInfo,
-  getSoldierInfo
+  getSoldierInfo,
 }
