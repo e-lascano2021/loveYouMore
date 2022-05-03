@@ -1,7 +1,20 @@
-const Profile = () => {
+import { useState, useEffect } from "react"
+import { getProfileInfo } from "../../services/profileService"
+
+const Profile = (props) => {
+  const [profile, setProfile] = useState({})
+
+  useEffect(() => {
+    const getProfile = async () => {
+      const profileData = await getProfileInfo(props.user.profile)
+      setProfile(profileData)
+    }
+    getProfile()
+  },[props.user.profile])
+
   return (
     <>
-    <h1>my profile</h1>
+    <h1>{profile.name}'s profile</h1>
     </>
   )
 }
