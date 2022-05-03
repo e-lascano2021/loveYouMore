@@ -31,8 +31,20 @@ const create = async(req, res) => {
   }
 }
 
+const showSoldier = async(req, res) => {
+  try {
+    Profile.findById(req.user.profile, function (err, myProfile) {
+    const subDocument = myProfile.loveArmy.id(req.params.id);
+      return res.status(201).json(subDocument)
+    });
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   show,
   index,
-  create
+  create,
+  showSoldier
 }
