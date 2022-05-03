@@ -15,7 +15,20 @@ const getLoveArmy = async () => {
   }
 }
 
+const getProfileInfo = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: "GET",
+      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
 
 export { 
-  getLoveArmy
+  getLoveArmy,
+  getProfileInfo
 }
