@@ -24,7 +24,7 @@ const LoveArmy = (props) => {
       <LoveArmyHeader/>
       {army.map((soldier) => {
         return( 
-          <Link to={`/loveArmy/${soldier._id}`}>
+          <Link to={`/loveArmy/${soldier._id}`} key={soldier._id}>
             <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
           </Link>
         )
