@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import LoveArmyCard from "../../components/LoveArmy/LoveArmyCard.jsx"
 import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader.jsx"
 import { getLoveArmy } from "../../services/profileService.js"
@@ -23,7 +24,9 @@ const LoveArmy = (props) => {
       <LoveArmyHeader/>
       {army.map((soldier) => {
         return( 
+          <Link to={`/loveArmy/${soldier._id}`}>
           <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
+          </Link>
         )
       })}
     </main>
