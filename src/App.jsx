@@ -6,6 +6,7 @@ import LoveArmy from './pages/LoveArmy/LoveArmy'
 import Profile from './pages/Profile/Profile'
 import LoveArmyForm from './pages/LoveArmy/LoveArmyForm'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Soldier from './pages/Soldier/Soldier'
 import * as authService from './services/authService'
 
 const App = () => {
@@ -42,6 +43,10 @@ const App = () => {
         <Route
           path="/loveArmy/new"
           element={user ? <LoveArmyForm/>: <Navigate to="/" />}
+        />
+        <Route
+          path="/loveArmy/:id"
+          element={user ? <Soldier/>: <Navigate to="/" />}
         />
         <Route
           path="/changePassword"

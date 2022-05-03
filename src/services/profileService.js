@@ -28,7 +28,21 @@ const getProfileInfo = async (id) => {
   }
 }
 
+const getSoldierInfo = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/loveArmy/${id}`, {
+      method: "GET",
+      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 export { 
   getLoveArmy,
-  getProfileInfo
+  getProfileInfo,
+  getSoldierInfo
 }
