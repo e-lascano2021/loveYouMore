@@ -6,6 +6,7 @@ const Soldier = () => {
   const { id } = useParams()
 
   const [soldier, setSoldier] = useState({})
+  
   useEffect(() => {
     const getSoldier = async () => {
       const soldierData = await getSoldierInfo(id)
