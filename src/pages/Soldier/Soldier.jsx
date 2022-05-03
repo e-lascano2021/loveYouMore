@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react"
-// import { getProfileInfo } from "../../services/profileService"
+import { getSoldierInfo } from "../../services/profileService"
+import { useParams } from "react-router-dom"
 
-const Soldier = (props) => {
+const Soldier = () => {
+  const { id } = useParams()
+
   const [soldier, setSoldier] = useState({})
-
-
-  // useEffect(() => {
-  //   const getSoldier = async () => {
-  //     // const profileData = await getProfileInfo(props.user.profile)
-  //     setProfile(props.)
-  //   }
-  //   getProfile()
-  // },[props.user.profile])
+  useEffect(() => {
+    const getSoldier = async () => {
+      const soldierData = await getSoldierInfo(id)
+      setSoldier(soldierData)
+    }
+    getSoldier()
+  },[id])
 
   return (
     <>
