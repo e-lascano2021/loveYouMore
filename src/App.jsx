@@ -6,8 +6,8 @@ import LoveArmy from './pages/LoveArmy/LoveArmy'
 import Profile from './pages/Profile/Profile'
 import LoveArmyForm from './pages/LoveArmy/LoveArmyForm'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import * as authService from './services/authService'
 import Soldier from './pages/Soldier/Soldier'
+import * as authService from './services/authService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
