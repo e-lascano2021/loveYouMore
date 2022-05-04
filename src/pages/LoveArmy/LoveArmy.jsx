@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import LoveArmyCard from "../../components/LoveArmy/LoveArmyCard.jsx"
 import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader.jsx"
@@ -24,7 +24,7 @@ const LoveArmy = (props) => {
       <LoveArmyHeader/>
       {army.map((soldier) => {
         return( 
-          <Link to={`/loveArmy/${soldier._id}`} key={soldier._id}>
+          <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
             <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
           </Link>
         )

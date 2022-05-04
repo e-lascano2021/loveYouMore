@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Login from '../../components/Login/Login.jsx'
 import Signup from '../../components/Signup/Signup.jsx'
 // import styles from './Landing.module.css'
