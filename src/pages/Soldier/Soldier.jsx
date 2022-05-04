@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { getSoldierInfo } from "../../services/profileService"
 import { useParams } from "react-router-dom"
 
 const Soldier = () => {
   const { id } = useParams()
-
   const [soldier, setSoldier] = useState({})
+  
   
   useEffect(() => {
     const getSoldier = async () => {
