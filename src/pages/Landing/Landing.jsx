@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Login from '../../components/Login/Login.jsx'
 import Signup from '../../components/Signup/Signup.jsx'
-// import styles from './Landing.module.css'
+// import styles from '../../assets/cssPages/Landing'
 
 const Landing = (props) => {
   const [form, setForm]= useState("none")
