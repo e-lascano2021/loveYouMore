@@ -56,9 +56,7 @@ const LoginForm = props => {
       </div>
       <div>
         <button className={styles.button}>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+        <button onClick={() => props.handleForm("none")}>Cancel</button>
       </div>
     </form>
   )

@@ -24,7 +24,7 @@ const Landing = (props) => {
       
       <div className={styles.bottom}>
         { form === "LogIn" ?
-          <Login {...props}/>
+          <Login {...props} handleForm={handleForm}/>
           : form === "SignUp" ?
           <Signup {...props}/> 
           :
