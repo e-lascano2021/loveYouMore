@@ -26,7 +26,7 @@ const Landing = (props) => {
         { form === "LogIn" ?
           <Login {...props} handleForm={handleForm}/>
           : form === "SignUp" ?
-          <Signup {...props}/> 
+          <Signup {...props} handleForm={handleForm}/> 
           :
           <h4>about the app</h4>
         }

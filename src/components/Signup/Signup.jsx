@@ -12,7 +12,11 @@ const Signup = props => {
     <>
       <h2>Sign Up</h2>
       <p>{message}</p>
-      <SignupForm {...props} updateMessage={updateMessage} />
+      <SignupForm 
+        {...props} 
+        updateMessage={updateMessage} 
+        handleForm={props.handleForm}
+      />
     </>
   )
 }
