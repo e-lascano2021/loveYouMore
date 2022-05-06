@@ -21,6 +21,11 @@ main {
   right:0px;
 }
 
+nav {
+  z-index: 100;
+  position: absolute;
+}
+
 h1 {
   font-size: xx-large;
 }
