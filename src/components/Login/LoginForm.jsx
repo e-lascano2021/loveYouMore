@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
 
@@ -56,9 +56,7 @@ const LoginForm = props => {
       </div>
       <div>
         <button className={styles.button}>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+        <button onClick={() => props.handleForm("none")}>Cancel</button>
       </div>
     </form>
   )
