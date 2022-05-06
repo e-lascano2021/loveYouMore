@@ -20,3 +20,14 @@
 .bottom{
   grid-area: "bottom";
 }
+
+.handleForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.links:hover {
+  color: blue;
+  text-decoration: underline;
+}

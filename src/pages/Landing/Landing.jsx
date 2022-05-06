@@ -16,8 +16,10 @@ const Landing = (props) => {
       <div className={styles.top}>
         <h1>Love You</h1>
         <h1>More</h1>
-        <p onClick={() => handleForm("LogIn")}>LogIn</p>
-        <p onClick={() => handleForm("SignUp")}>Signup</p>
+        <div className={styles.handleForm}>
+          <p onClick={() => handleForm("LogIn")} className={styles.links}>LogIn</p>
+          <p onClick={() => handleForm("SignUp")} className={styles.links}>Signup</p>
+        </div>
       </div>
       
       <div className={styles.bottom}>
