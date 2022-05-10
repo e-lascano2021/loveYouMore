@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import styles from './LoginForm.module.css'
+import styles from '../../assets/cssPages/Landing.module.css'
 import * as authService from '../../services/authService'
 
 const LoginForm = props => {
@@ -30,10 +30,10 @@ const LoginForm = props => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
+      className={styles.form}
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+      <div className={styles.flexEnd}>
+        <label htmlFor="email" className={styles.label}>Email:</label>
         <input
           type="text"
           autoComplete="off"
@@ -43,8 +43,8 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+      <div className={styles.flexEnd}>
+        <label htmlFor="password" className={styles.label}>Password:</label>
         <input
           type="password"
           autoComplete="off"
