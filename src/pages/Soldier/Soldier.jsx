@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { getSoldierInfo } from "../../services/profileService"
 import { useParams } from "react-router-dom"
+import SoldierHeader from "../../components/Soldier/SoldierHeader"
 
 const Soldier = () => {
   const { id } = useParams()
@@ -17,7 +18,7 @@ const Soldier = () => {
 
   return (
     <>
-    <h1>{soldier.name}</h1>
+    <SoldierHeader soldier={soldier}/>  
     </>
   )
 }
