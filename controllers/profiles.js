@@ -42,9 +42,22 @@ const showSoldier = async(req, res) => {
   }
 }
 
+const updatePoints = async(req, res) => {
+  try {
+    Profile.findById(req.user.profile, function (err, myProfile) {
+    let subDocument = myProfile.loveArmy.id(req.params.id);
+      subDocument.currentPoints = req.body
+      return res.status(201).json(subDocument.currentPoints)
+    });
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   show,
   index,
   create,
-  showSoldier
+  showSoldier,
+  updatePoints
 }
