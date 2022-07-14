@@ -6,6 +6,7 @@ import { getLoveArmy } from "../../services/profileService.js"
 
 const LoveArmy = (props) => {
   const [army, setArmy] = useState([])
+  const [inputText, setInputText] = useState("")
 
   useEffect(() => {
     const getArmyList = async () => {
@@ -19,16 +20,34 @@ const LoveArmy = (props) => {
     getArmyList()
   }, [])
 
+  const inputHandler = (e) => {
+    const search = e.target.value
+    setInputText(search)
+  }
+
+  const filteredArmy = army.filter((soldier) => {
+    if (inputText === "") {
+      return soldier
+    } else {
+      return soldier.name.includes(inputText)
+    }
+  })
+
   return (
     <main>
       <LoveArmyHeader/>
-      {army.map((soldier) => {
-        return( 
+      <br/>
+      <label>
+        Search for soldier
+        <input onChange={inputHandler}/>
+      </label>
+      {filteredArmy.map((soldier) => 
+        
           <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
             <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
           </Link>
-        )
-      })}
+        
+      )}
     </main>
   )
 }
