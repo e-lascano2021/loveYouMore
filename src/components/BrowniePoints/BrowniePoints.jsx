@@ -29,7 +29,6 @@ const BrowniePoints = (props) => {
 
   return (
     <>
-    <h4>Brownie Points:</h4>
     <div style={Parentdiv}>
       <div style={Childdiv}>
         <span style={progresstext}>
