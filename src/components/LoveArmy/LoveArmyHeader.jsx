@@ -8,10 +8,10 @@ const LoveArmyHeader = () => {
   }
   
   return(
-    <>
-      <h5>LoveArmy</h5>
+    <div className="flex-column center">
+      <h1>LoveArmy</h1>
       <button onClick={handleAddSoldier}>Add Soldier</button>
-    </>
+    </div>
   )
 }
 export default LoveArmyHeader

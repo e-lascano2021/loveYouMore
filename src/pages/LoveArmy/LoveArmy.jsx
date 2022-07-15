@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import "../../assets/cssPages/LoveArmy.css"
 import { Link } from "react-router-dom"
 import LoveArmyCard from "../../components/LoveArmy/LoveArmyCard.jsx"
 import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader.jsx"
@@ -37,10 +38,12 @@ const LoveArmy = (props) => {
     <main>
       <LoveArmyHeader/>
       <br/>
+      <div className="flex-row center">
       <label>
-        Search for soldier
-        <input onChange={inputHandler}/>
+        Search for soldier:
       </label>
+        <input onChange={inputHandler}/>
+      </div>
       {filteredArmy.map((soldier) => 
         
           <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>

@@ -1,0 +1,47 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
