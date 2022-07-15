@@ -15,19 +15,30 @@ const LoveArmyForm = () => {
     { value: "Philautia", label: "Philautia" },
     { value: "Mania", label: "Mania" },
   ]
+  const loveLanguagesOptions = [
+    { value: "Words of Affirmation", label: "Words of Affirmation" },
+    { value: "Acts of Service", label: "Acts of Service" },
+    { value: "Receiving Gifts", label: "Receiving Gifts" },
+    { value: "Quality Time", label: "Quality Time" },
+    { value: "Physical Touch", label: "Physical Touch" },
+  ]
 
   const [formData, setFormData] = useState({
     name: '', 
     image: '',
-    loveTypes: []
+    loveTypes: [],
+    loveLanguages: []
   })
+  const handleLoveLanguages = e => {
+    setFormData({...formData, "loveLanguages": e })
+  }
 
-  const handleChange = e => {
-    if(typeof e === "object" && !e.target){
-      setFormData({...formData, "loveTypes": e })
-    } else {
-      setFormData({...formData, [e.target?.name]: e.target?.value})
-    }
+  const handleLoveTypes = e => {
+    setFormData({...formData, "loveTypes": e })
+  }
+
+  const handleChange = e => {  
+    setFormData({...formData, [e.target?.name]: e.target?.value}) 
   }
 
   const handleSubmit = async e => {
@@ -79,7 +90,13 @@ const LoveArmyForm = () => {
         </div>
         
         <div>
-          <Select name="loveTypes" onChange={handleChange} isMulti closeMenuOnSelect={false} options={loveTypesOptions}/>
+          <label> Add Love Types</label>
+          <Select name="loveTypes" onChange={handleLoveTypes} isMulti closeMenuOnSelect={false} options={loveTypesOptions}/>
+        </div>
+
+        <div>
+        <label> Add Love Languages</label>
+          <Select name="loveLanguages" onChange={handleLoveLanguages} isMulti closeMenuOnSelect={false} options={loveLanguagesOptions}/>
         </div>
 
         <div className='createBtn-wrapper'>
