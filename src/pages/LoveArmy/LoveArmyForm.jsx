@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
+import Select from 'react-select'
 import { useNavigate } from "react-router"
 import { createLoveArmy } from '../../services/profileService'
 
 const LoveArmyForm = () => {
   const navigate = useNavigate()
+  const loveTypesOptions = [
+    { value: "Eros", label: "Eros" },
+    { value: "Philia", label: "Philia" },
+    { value: "Storge", label: "Storge" },
+    { value: "Agape", label: "Agape" },
+    { value: "Ludus", label: "Ludus" },
+    { value: "Pragma", label: "Pragma" },
+    { value: "Philautia", label: "Philautia" },
+    { value: "Mania", label: "Mania" },
+  ]
 
   const [formData, setFormData] = useState({
     name: '', 
@@ -12,10 +23,10 @@ const LoveArmyForm = () => {
   })
 
   const handleChange = e => {
-    if(e.target.name === "loveTypes"){
-      setFormData({...formData, [e.target.name]: e.target.value === "" ? [] : e.target.value.split(", ") })
+    if(typeof e === "object" && !e.target){
+      setFormData({...formData, "loveTypes": e })
     } else {
-      setFormData({...formData, [e.target.name]: e.target.value})
+      setFormData({...formData, [e.target?.name]: e.target?.value})
     }
   }
 
@@ -66,14 +77,9 @@ const LoveArmyForm = () => {
             onChange={handleChange}
           />
         </div>
+        
         <div>
-          <label className='label-title'> Add LoveTypes</label>
-          <input 
-            required
-            type="text"
-            name="loveTypes"
-            onChange={handleChange}
-          />
+          <Select name="loveTypes" onChange={handleChange} isMulti closeMenuOnSelect={false} options={loveTypesOptions}/>
         </div>
 
         <div className='createBtn-wrapper'>
