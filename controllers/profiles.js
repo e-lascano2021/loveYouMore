@@ -22,6 +22,7 @@ const index = async(req, res) => {
 const create = async(req, res) => {
   try {
     const profile= await Profile.findById(req.user.profile)
+    req.body.loveTypes = req.body.loveTypes.map(el => {return el.value})
     profile.loveArmy.push(req.body)
     await profile.save()
     const newSoldier = profile.loveArmy[profile.loveArmy.length - 1];
