@@ -4,13 +4,19 @@ import { createLoveArmy } from '../../services/profileService'
 
 const LoveArmyForm = () => {
   const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: '', 
-    image: ''
+    image: '',
+    loveTypes: []
   })
 
   const handleChange = e => {
-    setFormData({...formData, [e.target.name]: e.target.value})
+    if(e.target.name === "loveTypes"){
+      setFormData({...formData, [e.target.name]: e.target.value === "" ? [] : e.target.value.split(", ") })
+    } else {
+      setFormData({...formData, [e.target.name]: e.target.value})
+    }
   }
 
   const handleSubmit = async e => {
@@ -35,6 +41,7 @@ const LoveArmyForm = () => {
       throw error
     }
   }
+
   return (
     <main>
       <form onSubmit= {handleSubmit}>
@@ -59,6 +66,16 @@ const LoveArmyForm = () => {
             onChange={handleChange}
           />
         </div>
+        <div>
+          <label className='label-title'> Add LoveTypes</label>
+          <input 
+            required
+            type="text"
+            name="loveTypes"
+            onChange={handleChange}
+          />
+        </div>
+
         <div className='createBtn-wrapper'>
           <button type="submit" className='createBtn'>Create Post</button>
         </div>

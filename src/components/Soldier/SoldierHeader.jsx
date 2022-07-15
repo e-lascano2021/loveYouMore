@@ -5,9 +5,10 @@ const SoldierHeader = (props) =>{
   return (
     <>
       <h1>{props.soldier.name}</h1>
-      <label> 
+      <label>LoveTypes: </label>
+      <h4>{props.soldier.loveTypes?.join(", ")}</h4>
+      <label>
         <h4>Brownie Points:</h4>
-
         <BrowniePoints soldier={props.soldier}/>
       </label>
     </>
