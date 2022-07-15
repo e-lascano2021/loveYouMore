@@ -13,4 +13,5 @@ router.get("/loveArmy", checkAuth, profilesCtrl.index)
 router.post("/loveArmy/new", checkAuth, profilesCtrl.create)
 router.get("/loveArmy/:id", checkAuth, profilesCtrl.showSoldier)
 router.get("/:id", checkAuth, profilesCtrl.show)
+router.patch("/loveArmy/:id", checkAuth, profilesCtrl.updatePoints)
 export { router }

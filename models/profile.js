@@ -53,6 +53,11 @@ const loveArmySchema = new Schema({
     type: String,
     required: true,
   },
+  loveTypes: [{
+    type: String,
+    enum: ["Eros", "Philia", "Storge", "Agape", "Ludus", "Pragma", "Philautia", "Mania"],
+    required: true,
+  }],
   image: {
     type: String,
     required: false,
@@ -94,6 +99,10 @@ const profileSchema = new Schema({
   plans: [{
     planSchema
   }],
+  loveTypes: [{
+    type: String,
+    enum: ["Eros", "Philia", "Storge", "Agape", "Ludus", "Pragma", "Philautia", "Mania"],
+  }]
 },{
     timestamps: true,
 })
