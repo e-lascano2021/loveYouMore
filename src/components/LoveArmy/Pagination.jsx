@@ -8,7 +8,7 @@ const Pagination = (props) => {
   }
 
   return (
-    <nav>
+    <div>
       <ul>
         {pageNumbers.map(number => (
           <li key={number}>
@@ -18,7 +18,7 @@ const Pagination = (props) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 };
 
