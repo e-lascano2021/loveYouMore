@@ -7,7 +7,7 @@ import { getLoveArmy } from "../../services/profileService.js"
 
 const LoveArmy = (props) => {
   const [inputText, setInputText] = useState("")
-console.log(props)
+  
   useEffect(() => {
     const getArmyList = async () => {
       try {
