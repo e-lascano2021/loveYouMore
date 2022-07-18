@@ -29,6 +29,11 @@ h6 {
   font-size: 14px;
 }
 
+img{
+  height: 200px;
+  width: 100px
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -44,4 +49,8 @@ h6 {
   align-content: center;
   justify-items: center;
   align-items: center;
+}
+
+.width-hundred{
+  min-width: 100%;
 }

@@ -35,22 +35,27 @@ const LoveArmy = (props) => {
   })
 
   return (
-    <main>
+    <main className="flex-column center" >
       <LoveArmyHeader/>
       <br/>
       <div className="flex-row center">
       <label>
         Search for soldier:
-      </label>
+      </label>  
         <input onChange={inputHandler}/>
       </div>
-      {filteredArmy.map((soldier) => 
-        
+      <div>
+        {filteredArmy.map((soldier) => 
+          
           <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
-            <LoveArmyCard cardInfo={soldier} key={soldier._id}/>
+            <LoveArmyCard 
+              cardInfo={soldier} 
+              key={soldier._id}
+            />
           </Link>
         
-      )}
+        )}
+      </div>
     </main>
   )
 }
