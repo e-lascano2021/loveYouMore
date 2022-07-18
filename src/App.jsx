@@ -11,6 +11,7 @@ import * as authService from './services/authService'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [army, setArmy] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -34,7 +35,7 @@ const App = () => {
         <Route path="/" element={<Landing handleSignupOrLogin={handleSignupOrLogin}/>} />
         <Route
           path="/loveArmy"
-          element={user ? <LoveArmy/>: <Navigate to="/" />}
+          element={user ? <LoveArmy army={army} setArmy={setArmy}/>: <Navigate to="/" />}
         />
         <Route
           path="/profile"
@@ -42,7 +43,7 @@ const App = () => {
         />
         <Route
           path="/loveArmy/new"
-          element={user ? <LoveArmyForm/>: <Navigate to="/" />}
+          element={user ? <LoveArmyForm army={army} setArmy={setArmy}/>: <Navigate to="/" />}
         />
         <Route
           path="/loveArmy/:id"

@@ -3,7 +3,7 @@ import Select from 'react-select'
 import { useNavigate } from "react-router"
 import { createLoveArmy } from '../../services/profileService'
 
-const LoveArmyForm = () => {
+const LoveArmyForm = (props) => {
   const navigate = useNavigate()
   const loveTypesOptions = [
     { value: "Eros", label: "Eros" },
@@ -57,7 +57,8 @@ const LoveArmyForm = () => {
         })).json()
         finalFormData['image'] = res.url;
       }
-      createLoveArmy(finalFormData)
+      const data = await createLoveArmy(finalFormData)
+      props.setArmy([...props.army, data])
       navigate('/loveArmy')
     } catch (error) {
       throw error
