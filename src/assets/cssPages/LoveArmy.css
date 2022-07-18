@@ -5,30 +5,6 @@ main {
   margin: 10px;
 }
 
-h1 {
-  font-size: 45px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 16px;
-}
-
-h6 {
-  font-size: 14px;
-}
-
 img{
   height: 200px;
   width: 100px
@@ -53,4 +29,13 @@ img{
 
 .width-hundred{
   min-width: 100%;
+  /* background-color:red; */
+}
+
+.scrollLoveArmy {
+  overflow-x: scroll;
+  overflow-x:hidden;
+  width: 80%;
+  height: 65vh;
+  margin: 20px 
 }

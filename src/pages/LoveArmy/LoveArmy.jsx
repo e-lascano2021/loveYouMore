@@ -9,7 +9,7 @@ import Pagination from "../../components/LoveArmy/Pagination"
 const LoveArmy = (props) => {
   const [inputText, setInputText] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
-  const [cardsPerPage] = useState(2)
+  const [cardsPerPage] = useState(4)
 
   useEffect(() => {
     const getArmyList = async () => {
@@ -51,7 +51,7 @@ const LoveArmy = (props) => {
       </label>  
         <input onChange={inputHandler}/>
       </div>
-      <div>
+      <div className="scrollLoveArmy">
         {filteredArmy.length > 0 ? 
           currentCards.map((soldier) => 
             <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
@@ -64,13 +64,13 @@ const LoveArmy = (props) => {
           :
           <h3>Create your Love Army!</h3>
         }
-      </div>
       <Pagination
         cardsPerPage={cardsPerPage}
         totalCards={props.army.length}
         paginate={paginate}
-        />
-    </main>
+      />
+      </div>
+  </main>
   )
 }
 
