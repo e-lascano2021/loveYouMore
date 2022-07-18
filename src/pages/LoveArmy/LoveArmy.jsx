@@ -6,14 +6,13 @@ import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader.jsx"
 import { getLoveArmy } from "../../services/profileService.js"
 
 const LoveArmy = (props) => {
-  const [army, setArmy] = useState([])
   const [inputText, setInputText] = useState("")
-
+console.log(props)
   useEffect(() => {
     const getArmyList = async () => {
       try {
         const armyList = await getLoveArmy()
-        setArmy(armyList)
+        props.setArmy(armyList)
       } catch (error) {
         throw error
       }
@@ -26,7 +25,7 @@ const LoveArmy = (props) => {
     setInputText(search)
   }
 
-  const filteredArmy = army.filter((soldier) => {
+  const filteredArmy = props.army.filter((soldier) => {
     if (inputText === "") {
       return soldier
     } else {
