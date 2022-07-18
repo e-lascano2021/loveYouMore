@@ -41,7 +41,7 @@ const LoveArmy = (props) => {
       <div className="scrollLoveArmy">
         {filteredArmy.length > 0 ? 
           currentCards.map((soldier) => 
-            <Link to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
+            <Link className="decor-none" to={`/loveArmy/${soldier._id}`} key={soldier._id} state={soldier._id}>
               <LoveArmyCard 
                 cardInfo={soldier} 
                 key={soldier._id}

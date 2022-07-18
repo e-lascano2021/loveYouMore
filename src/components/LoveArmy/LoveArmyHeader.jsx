@@ -9,7 +9,7 @@ const LoveArmyHeader = () => {
   
   return(
     <div className="flex-column center">
-      <h1>LoveArmy</h1>
+      <h1 className="margin-ten">LoveArmy</h1>
       <button onClick={handleAddSoldier}>Add Soldier</button>
     </div>
   )
