@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import "../../assets/cssPages/LoveArmy.css"
 import { Link } from "react-router-dom"
 import LoveArmyCard from "../../components/LoveArmy/LoveArmyCard.jsx"
 import LoveArmyHeader from "../../components/LoveArmy/LoveArmyHeader.jsx"
-import { getLoveArmy } from "../../services/profileService.js"
 import Pagination from "../../components/LoveArmy/Pagination"
 
 const LoveArmy = (props) => {
   const [inputText, setInputText] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [cardsPerPage] = useState(4)
-
-  useEffect(() => {
-    const getArmyList = async () => {
-      try {
-        const armyList = await getLoveArmy()
-        props.setArmy(armyList)
-      } catch (error) {
-        throw error
-      }
-    }
-    getArmyList()
-  }, [])
   
   const inputHandler = (e) => {
     const search = e.target.value

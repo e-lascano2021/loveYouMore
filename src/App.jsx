@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Landing from './pages/Landing/Landing'
@@ -8,11 +8,25 @@ import LoveArmyForm from './pages/LoveArmy/LoveArmyForm'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Soldier from './pages/Soldier/Soldier'
 import * as authService from './services/authService'
+import { getLoveArmy } from "./services/profileService.js"
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [army, setArmy] = useState([])
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const getArmyList = async () => {
+      try {
+        const armyList = await getLoveArmy()
+        setArmy(armyList)
+      } catch (error) {
+        throw error
+      }
+    }
+    getArmyList()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
