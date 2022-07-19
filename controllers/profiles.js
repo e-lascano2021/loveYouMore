@@ -47,10 +47,21 @@ const showSoldier = async(req, res) => {
 const updatePoints = async(req, res) => {
   try {
     Profile.findById(req.user.profile, function (err, myProfile) {
-    let subDocument = myProfile.loveArmy.id(req.params.id);
-      subDocument.currentPoints = req.body
-      return res.status(201).json(subDocument.currentPoints)
-    });
+      let subDocument = myProfile.loveArmy.id(req.params.id)
+
+      if(subDocument.currentPoints > subDocument.totalPoints) {
+        subDocument.totalPoints = subDocument.currentPoints
+      }
+
+      if (subDocument.currentPoints + req.body.currentPoints < 0) {
+        subDocument.currentPoints = 0
+      } else {
+        subDocument.currentPoints += req.body.currentPoints
+      }
+      
+      myProfile.save()
+      return res.status(201).json(subDocument)
+    })
   } catch (error) {
     throw error
   }
