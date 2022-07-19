@@ -51,13 +51,13 @@ const LoveArmy = (props) => {
           :
           <h3>Create your Love Army!</h3>
         }
-      <Pagination
-        cardsPerPage={cardsPerPage}
-        totalCards={props.army.length}
-        paginate={paginate}
-      />
+        <Pagination
+          cardsPerPage={cardsPerPage}
+          totalCards={props.army.length}
+          paginate={paginate}
+        />
       </div>
-  </main>
+    </main>
   )
 }
 

@@ -62,3 +62,7 @@ img{
 .margin-zero {
   margin: 0;
 }
+
+.space-evenly{
+  justify-content: space-evenly;
+}
