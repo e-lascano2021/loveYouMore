@@ -66,3 +66,7 @@ img{
 .space-evenly{
   justify-content: space-evenly;
 }
+
+.height-thirty {
+  height: 30%
+}
