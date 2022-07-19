@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { getSoldierInfo } from "../../services/profileService"
 import { useParams } from "react-router-dom"
 import SoldierHeader from "../../components/Soldier/SoldierHeader"
+import "../../assets/cssPages/Soldier.css"
 
 const Soldier = () => {
   const { id } = useParams()
@@ -17,9 +18,13 @@ const Soldier = () => {
   },[id])
 
   return (
-    <>
-    <SoldierHeader soldier={soldier}/>  
-    </>
+    <main className="flex-column center">
+      <div className="soldier-header flex-row">
+        <SoldierHeader soldier={soldier}/>  
+      </div>
+      <div className="soldier-body">
+      </div>
+    </main>
   )
 }
 

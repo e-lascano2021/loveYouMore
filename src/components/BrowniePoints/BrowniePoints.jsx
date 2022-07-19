@@ -28,7 +28,11 @@ const BrowniePoints = (props) => {
     width: '70%',
     backgroundColor: 'whitesmoke',
     borderRadius: 40,
-    margin: 50
+    marginTop: 20,
+    marginBottom: 20,
+    marginRight: 50,
+    marginLeft: 50,
+
   }
   
   const Childdiv = {

@@ -1,0 +1,26 @@
+.soldier-header{
+  background-color: rgba(125, 199, 255, 0.502);
+  top: 0;
+  height: 25%;
+  width: 100%
+}
+
+.soldier-body {
+  height: 75%;
+  width: 100%;
+}
+
+.img-name {
+  width: 35%;
+  height:100%;
+}
+
+.soldier-img {
+  max-height: 60%;
+  width: 90%;
+  object-fit: contain;
+}
+
+.header-right {
+  width: 65%;
+}
