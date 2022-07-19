@@ -9,15 +9,13 @@ const Pagination = (props) => {
 
   return (
     <div>
-      <ul>
+      <div className='flex-row space-evenly'>
         {pageNumbers.map(number => (
-          <li key={number}>
-            <button onClick={() => props.paginate(number)}>
-              {number}
-            </button>
-          </li>
+          <button key={number} onClick={() => props.paginate(number)}>
+            {number}
+          </button>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

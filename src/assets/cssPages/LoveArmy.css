@@ -27,15 +27,42 @@ img{
   align-items: center;
 }
 
-.width-hundred{
-  min-width: 100%;
-  /* background-color:red; */
+.width-eighty {
+  width: 80%;
+}
+
+.contain-content {
+  contain: content;
+}
+
+.scrollLoveArmy:hover {
+  overflow: hidden;
+  overflow-y:scroll;
+  width: 80%;
+  height: 75vh;
+  margin: 20px 
 }
 
 .scrollLoveArmy {
-  overflow-x: scroll;
-  overflow-x:hidden;
+  overflow-y:hidden;
+  overflow-x: hidden;
   width: 80%;
-  height: 65vh;
+  height: 75vh;
   margin: 20px 
+}
+
+.decor-none {
+  text-decoration: none;
+}
+
+.margin-ten {
+  margin: 10px;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
+.space-evenly{
+  justify-content: space-evenly;
 }
