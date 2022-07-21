@@ -16,7 +16,10 @@ const UpdatePointsForm = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await updatePoints(props.id, formData)
+      const data = await updatePoints(props.id, formData)
+      props.setCurrentPoints(data.currentPoints)
+      props.setTotalPoints(data.totalPoints)
+
       e.target.reset()
     } catch (error) {
       throw error

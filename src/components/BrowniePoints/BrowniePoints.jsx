@@ -1,11 +1,19 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import UpdatePointsForm from "./UpdatePointsForm"
 
 const BrowniePoints = (props) => {
   const [form, setForm] = useState(false)
-  const percentage = (props.soldier.currentPoints / props.soldier.totalPoints) * 100
   const [math, setMath] = useState("")
+  const [currentPoints, setCurrentPoints] = useState(0)
+  const [totalPoints, setTotalPoints] = useState(0)
+
+  useEffect(() => {
+    setCurrentPoints(props.soldier.currentPoints)
+    setTotalPoints(props.soldier.totalPoints)
+  }, [props.soldier.currentPoints, props.soldier.totalPoints])
+
   
+  const percentage = (currentPoints / totalPoints) * 100
   let color = "rgb(50, 205, 50)"
   if (percentage < 11) {
     color = "#FF0000"
@@ -52,8 +60,7 @@ const BrowniePoints = (props) => {
     fontSize: '12px',
   }
 
-  const handleForm = (math) => {
-    
+  const handleForm = (math) => { 
     form ? setForm(false) : setForm(true)
     setMath(math)
   }
@@ -69,7 +76,7 @@ const BrowniePoints = (props) => {
       <div style={Parentdiv}>
         <div style={Childdiv}>
           <span style={progresstext}>
-            {`${props.soldier.currentPoints} / ${props.soldier.totalPoints}`}
+            {`${currentPoints} / ${totalPoints}`}
           </span>
         </div>
       </div>
@@ -77,7 +84,7 @@ const BrowniePoints = (props) => {
           <button onClick={() => handleForm("Add")}>+</button> : ""
       }
       {form ? 
-        <UpdatePointsForm id={props.id} name={props.name} handleForm={handleForm} math={math} /> :
+        <UpdatePointsForm id={props.soldier._id} setCurrentPoints={setCurrentPoints} setTotalPoints={setTotalPoints} name={props.name} handleForm={handleForm} math={math} /> :
         ""
       }
     </div>
