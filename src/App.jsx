@@ -26,7 +26,7 @@ const App = () => {
       }
     }
     getArmyList()
-  }, [])
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
