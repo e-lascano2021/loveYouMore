@@ -53,7 +53,8 @@ const BrowniePoints = (props) => {
   }
 
   const handleForm = (math) => {
-    setForm(true)
+    
+    form ? setForm(false) : setForm(true)
     setMath(math)
   }
 
