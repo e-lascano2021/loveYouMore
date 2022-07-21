@@ -77,7 +77,7 @@ const BrowniePoints = (props) => {
           <button onClick={() => handleForm("Add")}>+</button> : ""
       }
       {form ? 
-        <UpdatePointsForm name={props.name} math={math} /> :
+        <UpdatePointsForm name={props.name} handleForm={handleForm} math={math} /> :
         ""
       }
     </div>
