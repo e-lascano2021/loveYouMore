@@ -16,7 +16,7 @@ const SoldierHeader = (props) =>{
         <p className="margin-zero">{props.soldier.loveLanguages?.join(", ")}</p>
         <br/>
         <h6 className="margin-zero">Brownie Points:</h6>
-        <BrowniePoints soldier={props.soldier}/>
+        <BrowniePoints edit="edit" name={props.soldier.name} soldier={props.soldier}/>
       </div>
     </>
   )
