@@ -28,3 +28,13 @@
 .width-hundred {
   width: 100%;
 }
+
+.point-form {
+  background-color: rgba(0, 0, 0, 0.401);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
