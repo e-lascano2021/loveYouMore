@@ -1,7 +1,6 @@
 import BrowniePoints from "../BrowniePoints/BrowniePoints"
 
 const SoldierHeader = (props) =>{
-
   return (
     <>
       <div className="flex-column img-name center">
@@ -16,7 +15,7 @@ const SoldierHeader = (props) =>{
         <p className="margin-zero">{props.soldier.loveLanguages?.join(", ")}</p>
         <br/>
         <h6 className="margin-zero">Brownie Points:</h6>
-        <BrowniePoints edit="edit" name={props.soldier.name} soldier={props.soldier}/>
+        <BrowniePoints edit="edit" id={props.soldier._id} name={props.soldier.name} soldier={props.soldier}/>
       </div>
     </>
   )

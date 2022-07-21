@@ -58,11 +58,15 @@ const getSoldierInfo = async (id) => {
   }
 }
 
-const updatePoints = async (id) => {
+const updatePoints = async (id, points) => {
   try {
     const res = await fetch(`${BASE_URL}/loveArmy/${id}`, {
       method: "PATCH",
-      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() },
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(points)
     })
     const data = await res.json()
     return data
