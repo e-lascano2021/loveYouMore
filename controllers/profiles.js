@@ -49,8 +49,8 @@ const updatePoints = async(req, res) => {
     Profile.findById(req.user.profile, function (err, myProfile) {
       let subDocument = myProfile.loveArmy.id(req.params.id)
 
-      if(subDocument.currentPoints > subDocument.totalPoints) {
-        subDocument.totalPoints = subDocument.currentPoints
+      if(subDocument.currentPoints + req.body.currentPoints > subDocument.totalPoints) {
+        subDocument.totalPoints = subDocument.currentPoints+ req.body.currentPoints
       }
 
       if (subDocument.currentPoints + req.body.currentPoints < 0) {
