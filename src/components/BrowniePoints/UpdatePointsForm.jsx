@@ -1,11 +1,7 @@
 import React, {useState} from "react"
 import { updatePoints } from "../../services/profileService"
-import { useNavigate } from "react-router"
-
 
 const UpdatePointsForm = (props) => {
-  const navigate = useNavigate()
-
   const [formData, setFormData] = useState({
     currentPoints: 0
   })
@@ -19,10 +15,9 @@ const UpdatePointsForm = (props) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    console.log(formData)
     try {
       await updatePoints(props.id, formData)
-      navigate(`/loveArmy/${props.id}`)
+      e.target.reset()
     } catch (error) {
       throw error
     }
