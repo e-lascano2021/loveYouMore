@@ -7,9 +7,9 @@ const UpdatePointsForm = (props) => {
   })
   const handleChange = (e) => {
     if (props.math === "Add") {
-      setFormData({ ...formData, [e.target.name] :parseInt(e.target.value)}) 
+      setFormData({ ...formData, [e.target.name] : parseInt(e.target.value)}) 
     } else {
-      setFormData({ ...formData, [e.target.name] :parseInt(`-${e.target.value}`)})
+      setFormData({ ...formData, [e.target.name] : parseInt(`-${e.target.value}`)})
     }
   }
 
@@ -19,7 +19,6 @@ const UpdatePointsForm = (props) => {
       const data = await updatePoints(props.id, formData)
       props.setCurrentPoints(data.currentPoints)
       props.setTotalPoints(data.totalPoints)
-
       e.target.reset()
     } catch (error) {
       throw error
@@ -32,8 +31,8 @@ const UpdatePointsForm = (props) => {
       <div>
         <h5> {props.math} points {props.math === "Add"? "to": "from"} {props.name}'s points</h5>
         <form onSubmit={handleSubmit}>
-          <input type="number" min="0" onChange={handleChange}name="currentPoints"></input>
-          <button>math points</button>
+          <input type="number" min="0" onChange={handleChange} name="currentPoints"></input>
+          <button> {props.math} points</button>
         </form>
       </div>
     </div>
