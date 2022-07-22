@@ -14,7 +14,7 @@ const BrowniePoints = (props) => {
 
   
   const percentage = (currentPoints / totalPoints) * 100
-  let color = "rgb(50, 205, 50)"
+  let color
   if (percentage < 11) {
     color = "#FF0000"
   } else if (percentage < 22 ){
