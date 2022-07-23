@@ -25,10 +25,11 @@ const LoveArmyForm = (props) => {
 
   const [formData, setFormData] = useState({
     name: '', 
-    image: '',
+    image: {},
     loveTypes: [],
     loveLanguages: []
   })
+  
   const handleLoveLanguages = e => {
     setFormData({...formData, "loveLanguages": e })
   }
@@ -40,12 +41,16 @@ const LoveArmyForm = (props) => {
   const handleChange = e => {  
     setFormData({...formData, [e.target?.name]: e.target?.value}) 
   }
+  
+  const handleImage = e => {
+    setFormData({...formData, [e.target?.name]: e.target?.files[0]}) 
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
     try {
       let finalFormData = { ...formData }
-      if (formData.image!=='') {
+      if (formData.image) {
         const data = new FormData()
         data.append('file', formData.image)
         data.append("upload_preset", "loveyoumore")
@@ -86,7 +91,7 @@ const LoveArmyForm = (props) => {
             required
             type='file'
             name="image"
-            onChange={handleChange}
+            onChange={handleImage}
           />
         </div>
         
