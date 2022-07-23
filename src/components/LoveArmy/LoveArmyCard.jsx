@@ -16,7 +16,7 @@ const LoveArmyCard = (props) => {
 
   return (
     <div className="flex-row">
-      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt= "temp"/>
+      <img src={cardInfo.image} alt= "temp"/>
 
       <div className="flex-column center contain-content width-eighty">
         <h2 className="margin-zero">{cardInfo.name}</h2>

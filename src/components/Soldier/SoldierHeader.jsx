@@ -4,7 +4,7 @@ const SoldierHeader = (props) =>{
   return (
     <>
       <div className="flex-column img-name center">
-        <img className="soldier-img" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="soldierpic"></img>
+        <img className="soldier-img" src={props.soldier.image} alt="soldierpic"></img>
         <h2 className="margin-zero">{props.soldier.name}</h2>
       </div>
       <div className="flex-column center header-right">
